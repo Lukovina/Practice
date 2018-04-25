@@ -42,23 +42,21 @@ SqvCalc.prototype.min = function(x,y){
 SqvCalc.prototype.setValue = function() {
     return this.render(this.res)
 }
-////////////////////////////////////////////////////////////////
 
 function ArrCalc(){
-    this.arr = new Array;
 }
 
 ArrCalc.prototype = Object.create(SqvCalc.prototype)
 
 ArrCalc.prototype.reinit = function() {
-  
+    arr = []
     for( var i = 0, n = 200; i < n ; i++) {
-        this.arr[i] = Math.floor(Math.random()*(50+1));
+        arr[i] = Math.floor(Math.random()*(50+1));
     }
-    return this.arr
+    return this.arr = arr 
 }
 
-arc = new ArrCalc()
+var arc = new ArrCalc()
 
 function Calculator(){}
 

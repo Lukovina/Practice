@@ -29,7 +29,7 @@ SuperArray.prototype.render = function(separator){
     document.write('<br />');
 }
 
-var sArr = new SuperArray(20,50, {min: 0, max: 9})
+var sArr = new SuperArray(6,10, {min: 0, max: 9})
 
 SuperArray.prototype.clear = function(direction, k) {
     
@@ -52,7 +52,15 @@ SuperArray.prototype.clear = function(direction, k) {
 
 SuperArray.prototype.setMarker = function(obj){
             this.buffer = this.arr[obj.x][obj.y]
+            this.bufferX = obj.x
+            this.bufferY = obj.y
             this.arr[obj.x][obj.y] = "&"
     
+    this.render()
+}
+
+SuperArray.prototype.goTo = function(obj) {
+            this.arr[this.bufferX][this.bufferY] = this.buffer
+            this.arr[obj.x][obj.y] = "&"
     this.render()
 }

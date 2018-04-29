@@ -33,16 +33,17 @@ var sArr = new SuperArray(20,50, {min: 0, max: 9})
 
 SuperArray.prototype.clear = function(direction, k) {
     
-    for(var i = 0; i < this.arr.length; i++){
-        for(var j = 0; j < this.arr[i].length; j++){
-            if(direction == 'row') {
-                this.arr[k][j] = '0'
+    if(direction == 'row') {
+        for(var i = 0; i < this.arr[k].length; i++){
+                this.arr[k][i] = '0'
             }
+    }
 
-            if(direction == "column") {
+    if(direction == 'column') {
+        for(var i = 0; i < this.arr.length; i++){
+            for( var j = 0; j < this.arr[i].length; j++) {
                 this.arr[i][k] = '0'
             }
-           
         }
     }
         this.render()

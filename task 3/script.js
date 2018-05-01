@@ -23,13 +23,14 @@ SuperArray.prototype.render = function(separator){
         }
         document.write('<br />');
     }
+    
     for(i = 0; i<this.arr[0].length;i++){
         document.write(separator + " ");
     }
     document.write('<br />');
 }
 
-var sArr = new SuperArray(20,50, {min: 0, max: 9})
+var sArr = new SuperArray(15,20, {min: 0, max: 9})
 
 SuperArray.prototype.clear = function(direction, k) {
     
@@ -52,7 +53,48 @@ SuperArray.prototype.clear = function(direction, k) {
 
 SuperArray.prototype.setMarker = function(obj){
             this.buffer = this.arr[obj.x][obj.y]
+            this.bufferX = obj.x
+            this.bufferY = obj.y
             this.arr[obj.x][obj.y] = "&"
     
+    this.render()
+}
+
+SuperArray.prototype.goTo = function(obj) {
+            this.arr[this.bufferX][this.bufferY] = this.buffer
+            this.bufferX = obj.x
+            this.bufferY = obj.y
+            this.buffer = this.arr[obj.x][obj.y]
+            this.arr[obj.x][obj.y] = "&"
+    this.render()
+}
+
+
+SuperArray.prototype.shift = function(direction) {
+    if(direction == 'left') {
+        this.arr[this.bufferX][this.bufferY]  = this.buffer
+        this.bufferY = this.bufferY-1
+        this.buffer = this.arr[this.bufferX][this.bufferY]
+        this.arr[this.bufferX][this.bufferY] = '&'
+        
+    }    
+    if(direction == 'right') {
+        this.arr[this.bufferX][this.bufferY]  = this.buffer
+        this.buffer = this.arr[this.bufferX][this.bufferY+1]
+        this.arr[this.bufferX][this.bufferY+1] = '&'
+        this.bufferY = this.bufferY+1
+    }    
+    if(direction == 'top') {
+        this.arr[this.bufferX][this.bufferY]  = this.buffer
+        this.buffer = this.arr[this.bufferX-1][this.bufferY]
+        this.arr[this.bufferX-1][this.bufferY] = '&'
+        this.bufferX = this.bufferX-1
+    }    
+    if(direction == 'bottom') {
+        this.arr[this.bufferX][this.bufferY]  = this.buffer
+        this.buffer = this.arr[this.bufferX+1][this.bufferY]
+        this.arr[this.bufferX+1][this.bufferY] = '&'
+        this.bufferX = this.bufferX+1
+    }            
     this.render()
 }

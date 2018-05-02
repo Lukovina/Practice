@@ -35,7 +35,7 @@ var sArr = new SuperArray(15,20, {min: 0, max: 9})
 SuperArray.prototype.clear = function(direction, k) {
     
     if(direction == 'row') {
-        for(var i = 0; i < this.arr[k].length; i++){
+        for(var i = 0; i < this.arr[0].length; i++){
                 this.arr[k][i] = '0'
             }
     }

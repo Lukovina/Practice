@@ -1,9 +1,10 @@
+//Calc
 function Calc(x){
     this.x = x;
 }
 
-Calc.prototype.render = function(x) {
-    return this.x = x;
+Calc.prototype.render = function() {
+    return this.x;
 }
 
 Calc.prototype.clear = function() {
@@ -18,29 +19,30 @@ SqvCalc.prototype = Object.create(Calc.prototype)
 SqvCalc.prototype.sum = function(x,y){
     var res = x + y;
     res*=res
-    return this.res = res
+    return this.setValue(res)
 }
 
 SqvCalc.prototype.mul = function(x,y){
     var res = x * y;
     res*=res
-    return this.res = res
+    return this.setValue(res)
 }
 
 SqvCalc.prototype.div = function(x,y){
     var res = x / y;
     res*=res
-    return this.res = res
+    return this.setValue(res)
 }
 
 SqvCalc.prototype.min = function(x,y){
     var res = x - y;
     res*=res
-    return this.res = res
+    return this.setValue(res)
 }
 
-SqvCalc.prototype.setValue = function() {
-    return this.render(this.res)
+SqvCalc.prototype.setValue = function(x) {
+    this.x = x
+    return this.x
 }
 
 function ArrCalc(){

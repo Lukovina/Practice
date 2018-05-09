@@ -4,10 +4,12 @@ window.onload = function() {
     console.log(blocks)
     
     
-    var i = 0;
-    var step = 0;
+    
 
       //VERSION 2 
+      
+      var i = 0;
+      var step = 0;
 
     setInterval(function(){
         
@@ -22,14 +24,17 @@ window.onload = function() {
         i+=step;
        
     }, 300)
-
+}
     
     
 
     // VERSION 1 
+    // var i = 0;
+    // var step = 1;
     // setInterval(function(){
     //         if(i == blocks.length) {
     //             i = 0;
+            
     //         }
             
     //         blocks[i].classList.toggle('bottom');
@@ -37,4 +42,4 @@ window.onload = function() {
     //         i+=step;
            
     //     }, 300)
-    }
+    //  }

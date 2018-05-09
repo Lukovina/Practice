@@ -8,13 +8,13 @@ window.onload = function() {
     var step = 0;
 
       //VERSION 2 
-      
+
     setInterval(function(){
         
         if(i == blocks.length - 1) {
-            -- step ;
+            step --;
         }else if(i == 0) {
-            ++ step ;
+            step ++;
         }
         
         blocks[i].classList.toggle('bottom');
@@ -33,7 +33,6 @@ window.onload = function() {
     //         }
             
     //         blocks[i].classList.toggle('bottom');
-    i       
 
     //         i+=step;
            

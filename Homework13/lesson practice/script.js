@@ -5,15 +5,16 @@ window.onload = function() {
     
     
     var i = 0;
-    var step = 1;
+    var step = 0;
 
-       
+      //VERSION 2 
+      
     setInterval(function(){
         
         if(i == blocks.length - 1) {
-            step = -1
+            -- step ;
         }else if(i == 0) {
-            step = 1
+            ++ step ;
         }
         
         blocks[i].classList.toggle('bottom');
@@ -21,6 +22,10 @@ window.onload = function() {
         i+=step;
        
     }, 300)
+
+    
+    
+
     // VERSION 1 
     // setInterval(function(){
     //         if(i == blocks.length) {
@@ -28,7 +33,7 @@ window.onload = function() {
     //         }
             
     //         blocks[i].classList.toggle('bottom');
-            
+    i       
 
     //         i+=step;
            

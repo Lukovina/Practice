@@ -5,7 +5,7 @@ window.onload = function(){
 	var block = document.querySelector('.block')
 	var red = document.querySelector('.red')
 	var green = document.querySelector('.green')
-
+	var comission
 
 	range.addEventListener('mousemove', putRange)
 	number.addEventListener('click', putNumber)
@@ -13,40 +13,34 @@ window.onload = function(){
 
 
 	function putRange(){
-	if (range.value<20) {
-		var comission = range.value * .02
-	}else if(range.value >=20 && range.value<50) {
-		comission = range.value * .04
-	}else if(range.value >=50 && range.value<75) {
-		comission = range.value * .06
-	}else if(range.value >=75 && range.value<100) {
-		comission = range.value * .08
-	}
-
-
 	number.value  = range.value;
 	green.style.height = range.value + 'px';
-	red.style.height = comission + 'px';
-	red.style.bottom = green.style.height
+	red.style.height = comission(range.value) + 'px';
+	red.style.bottom = green.style.height;
+
 	}
 
 
 
 	function putNumber() {
-		if (range.value<20) {
-		var comission = range.value * .02
-	}else if(range.value >=20 && range.value<50) {
-		comission = range.value * .04
-	}else if(range.value >=50 && range.value<75) {
-		comission = range.value * .06
-	}else if(range.value >=75 && range.value<100) {
-		comission = range.value * .08
-	}
-
-
+		
 		range.value = number.value
 		green.style.height = number.value + 'px';
-		red.style.height = comission + 'px';
+		red.style.height = comission(range.value) + 'px';
 		red.style.bottom = green.style.height
 	}
+	
+
+	function comission (range){
+    if (range < 20) {
+        return range*.02;
+    }else if (range >= 20 && range < 50) {
+        return range*.04;
+    } else if (range >+ 50 && range < 75) {
+        return range*.06;
+    } else if (range >= 75 && range <= 100) {
+        return range*.08
+    }
+
+}
 }

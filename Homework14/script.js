@@ -7,10 +7,6 @@ window.onload = function(){
 	var green = document.querySelector('.green')
 
 
-
-	
-
-
 	range.addEventListener('mousemove', putRange)
 	number.addEventListener('click', putNumber)
 
@@ -47,7 +43,7 @@ window.onload = function(){
 		comission = range.value * .08
 	}
 
-	
+
 		range.value = number.value
 		green.style.height = number.value + 'px';
 		red.style.height = comission + 'px';

@@ -23,7 +23,9 @@ window.onload = function(){
 
 
 	function putNumber() {
-		
+		if(number.value>100) {
+			number.value=100
+		}
 		range.value = number.value
 		green.style.height = number.value + 'px';
 		red.style.height = comission(range.value) + 'px';
@@ -36,7 +38,7 @@ window.onload = function(){
         return range*.02;
     }else if (range >= 20 && range < 50) {
         return range*.04;
-    } else if (range >+ 50 && range < 75) {
+    } else if (range >= 50 && range < 75) {
         return range*.06;
     } else if (range >= 75 && range <= 100) {
         return range*.08

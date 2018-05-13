@@ -3,14 +3,15 @@ window.onload = function() {
     var elems = document.querySelectorAll('.inp');
     var textarea = document.querySelector('#text');
     var i = 0;
-
+    var step = 0;
     setInterval(function(){
-        if(i==elems.length){
-            i=0
-        }
-
-        textarea.value += elems[i].value
+     if(i==elems.length) {
+         step--
+     }else if (i==0) {
+         step++
+     }
+        textarea.value+= elems[i].value+ ','
        
-        i++
-    }, 400)
+        i+=step
+    }, 2000)
 }

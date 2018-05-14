@@ -1,0 +1,12 @@
+body{
+	margin: 0;
+}
+
+
+.block{
+	position: relative;
+	border: 2px solid blue;
+	width: 230px;
+	height: 230px;
+	transition: left .01s;
+}

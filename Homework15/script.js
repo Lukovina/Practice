@@ -14,32 +14,30 @@ window.onload = function() {
 
 
 	function move (e) {
-		console.log(e)
+		console.dir(hero)
+		console.dir(document)
+		console.dir(window)
+		console.log(window.screenWidth)
 
-
-		if(e.key == 'ArrowRight') {
+		if(e.key == 'ArrowRight' &&  hero.offsetLeft + hero.offsetWidth <= window.innerWidth) {
 			hero.style.left = hero.offsetLeft + step + 'px';
-		}else if(e.key == 'ArrowLeft') {
-			hero.style.left = hero.offsetLeft - step + 'px';
+		}else if(e.key == 'ArrowLeft'&&  hero.offsetLeft >= 0) {
+			hero.style.left = hero.offsetLeft - step + 'px' ;
 		}
-		else if(e.key == 'ArrowUp' && !e.ctrlKey) {
+		else if(e.key == 'ArrowUp' && !e.ctrlKey&& hero.offsetTop >= 0) {
 			hero.style.top = hero.offsetTop - step + 'px';
 		}
-		else if(e.key == 'ArrowDown'&& !e.ctrlKey) {
+		else if(e.key == 'ArrowDown'&& !e.ctrlKey && hero.offsetTop + hero.offsetHeight < window.innerHeight) {
 			hero.style.top = hero.offsetTop + step + 'px';
 		}else if(e.key == ' '&& !e.ctrlKey) {
 			timer = setInterval(jumping,20)
 		}else if(e.key == 'Control') {
 			hero.style.height = hero.clientHeight*.6 + 'px';
 			hero.style.width = hero.clientWidth*1.15 + 'px';
-
-
-
 		}
 
 
 		var m = hero.offsetTop -h
-
 	    function jumping() {
 
 			if((hero.offsetTop <= m)) {
@@ -53,6 +51,6 @@ window.onload = function() {
 				clearInterval(timer)
 			}
 
+		}
 	}
-}
 }

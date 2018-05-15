@@ -5,7 +5,11 @@ window.onload = function(){
 	var buffer = 5;
 	console.dir(window)
 	
+	
+
      var timer = setInterval(runner,20)
+    
+    
 
 	function runner(){
 		if((block.offsetLeft >= window.innerWidth - block.offsetWidth - buffer) ||

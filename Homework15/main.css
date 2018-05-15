@@ -1,0 +1,19 @@
+.hero {
+	position: fixed;
+	border: 2px solid green;
+	width: 100px;
+	height: 100px;
+	bottom: 0px;
+	
+}
+
+.heroes_jump {
+	bottom: 0%;
+	animation: jump 1s; 
+}
+
+	@keyframes jump{
+	0%   {bottom: 0%;}
+	50%  {bottom: 10%;}
+	100% {bottom: 0%;}
+}

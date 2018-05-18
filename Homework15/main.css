@@ -1,12 +1,16 @@
-* {
+body {
 	box-sizing: border-box;
 }
 .hero {
 	position: fixed;
-	border: 2px solid green;
+	background-color: black;
 	width: 100px;
 	height: 100px;
 	bottom: 0px;
-	
+	transition: all .2s;
+}
+.sit {
+	width: 115px;
+	height: 60px;
 }
 

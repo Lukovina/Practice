@@ -10,25 +10,26 @@ window.onload = function() {
 	var h = 100;
 
 
-	
 	function chooseAction (e) {
-		if(e.key == ' ' && !e.ctrlKey) {
+		if(e.key == ' ') {
 			jumping(hero,e);
 		}
 		if(e.key == 'Control') {
 			sit(hero,e);
 		}else {
-			moveTo(e.key, hero, e)
+			moveTo(e, hero)
 		}
 	}
 
 
 	function jumping(person,e) {
-		
-		person.style.top = person.offsetTop - h + 'px';
-		setTimeout(function(){
-		person.style.top = person.offsetTop + h + 'px';},200)
+		if (!e.ctrlKey) {
+			person.style.top = person.offsetTop - h + 'px';
+			setTimeout(function(){
+			person.style.top = person.offsetTop + h + 'px';},200)
 		}
+	}
+		
 
 	function sit(person, e) {
 		if( person.clientHeight === 100) {
@@ -42,19 +43,18 @@ window.onload = function() {
 				person.style.top = person.offsetTop-40+ 'px';
 				person.classList.remove('sit')
 			}
-		
 		}
 	}	
 
 
-	function moveTo(direction, person, e) {
-		if (direction === 'ArrowUp'&& !e.ctrlKey && person.offsetTop >= 0) {
+	function moveTo(person, e) {
+		if (e.key === 'ArrowUp'&& !e.ctrlKey && person.offsetTop >= 0) {
             person.style.top = person.offsetTop - step + 'px';
-        }else if (direction === 'ArrowDown'&& !e.ctrlKey && person.offsetTop + person.offsetHeight < window.innerHeight) {
+        }else if (e.key === 'ArrowDown'&& !e.ctrlKey && person.offsetTop + person.offsetHeight < window.innerHeight) {
             person.style.top = person.offsetTop + step + 'px';
-        }else if (direction === 'ArrowLeft' &&  hero.offsetLeft >= 0) {
+        }else if (e.key === 'ArrowLeft' &&  hero.offsetLeft >= 0) {
             person.style.left = person.offsetLeft - step + 'px';
-        }else if (direction === 'ArrowRight' &&  person.offsetLeft + person.offsetWidth <= window.innerWidth) {
+        }else if (e.key === 'ArrowRight' &&  person.offsetLeft + person.offsetWidth <= window.innerWidth) {
             person.style.left = person.offsetLeft + step + 'px';
 		}
 	}

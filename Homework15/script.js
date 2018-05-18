@@ -31,7 +31,7 @@ window.onload = function() {
 	}
 		
 
-	function sit(person, e) {
+	function sit(person) {
 		if( person.clientHeight === 100) {
 			person.classList.add('sit');
 			person.style.top = person.offsetTop+40+ 'px';

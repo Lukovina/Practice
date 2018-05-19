@@ -1,0 +1,49 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	box-sizing: border-box;
+}
+.hero {
+	position: fixed;
+	background-color: black;
+	width: 100px;
+	height: 100px;
+	bottom: 0px;
+	transition: all .2s;
+}
+
+.sit {
+	width: 115px;
+	height: 60px;
+}
+
+.PKM{
+    position: fixed;
+    list-style: none;
+    visibility: hidden;
+}
+
+.show{
+    visibility: visible;
+}
+
+
+.item{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 40px;
+text-align: center;
+border: 2px solid tomato;
+padding: 5px;
+margin: 5px;
+border-radius: 10px;
+cursor: pointer;
+transition: .3s;
+}
+
+.item:hover{
+	color: white;
+    background-color: tomato;
+}

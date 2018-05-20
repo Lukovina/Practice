@@ -10,6 +10,10 @@ function func3() {
     changeColor(hero)
 }
 
+function func4(){
+    remove(hero);
+}
+
 window.onload = function(){
 
 
@@ -84,6 +88,18 @@ window.onload = function(){
 
     window.changeColor = changeColor;
 
+    function remove(person) {
+        person.classList.toggle('removeHero');
+        if(pkm.childNodes[2].textContent== 'Remove') {
+            pkm.childNodes[2].textContent= 'Appear';
+        }else {
+            pkm.childNodes[2].textContent= 'Remove'
+        }
+        
+    }
+
+    window.remove = remove;
+
 //CONTEXT_MENU//
 
 var pkm = document.querySelector('.PKM') 
@@ -119,9 +135,11 @@ var pkm = document.querySelector('.PKM')
             },
                 {title: "Sit",
                 handler: 'func2'
+            },   
+                {title: "Remove",
+                handler: 'func4'
             },
-            {
-                title: "Change Color",
+                {title: "Change Color",
                 handler: 'func3'
             }
         ]

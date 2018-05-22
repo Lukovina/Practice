@@ -24,32 +24,18 @@ window.onload = function() {
     // resultByType =  myMethods.getValuesByType.call(obj, 'name')
     // console.log(resultByType)
 
-//     var characters = [
-//         { 'name': 'barney', 'age': 36 },
-//         { 'name': 'fred', 'age': 40 }
-//     ];
-   
-//     function pluck (prop) {
-//         this.forEach(function(item,pos,source){
-//             console.log(source[pos])
-//         });
 
-//     }
+    //homework task 1
+    var characters = [
+        { 'name': 'barney', 'age': 36 },
+        { 'name': 'fred', 'age': 40 }
+    ];
 
-//     pluck.call(characters, 'name')
-   
-// }
-
-
-
-var arr = [5,1,43,-4]
-
-res = arr.reduce(function(prev,item,pos,arr){
-    if (pos == 2) {
-        console.log(prev)
+    var pluck = function(arr, key) { 
+        return arr.map(function(item) { 
+            return item[key] 
+        }) 
     }
-   return prev+item
-},)
 
-console.log(res)
+   console.log(pluck(characters, 'name'))
 }

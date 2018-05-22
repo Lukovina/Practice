@@ -26,8 +26,6 @@ window.onload = function(){
     var buffer = 6;
     var h = 100;
 
-
-    
     function chooseAction (e) {
         if(e.key == ' '&&!e.ctrlKey) {
             jumping(hero,e);

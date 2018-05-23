@@ -1,3 +1,4 @@
+
 window.onload = function() {
 
     // class practice
@@ -26,16 +27,52 @@ window.onload = function() {
 
 
     //homework task 1
-    var characters = [
-        { 'name': 'barney', 'age': 36 },
-        { 'name': 'fred', 'age': 40 }
-    ];
+//     var characters = [
+//         { 'name': 'barney', 'age': 36 },
+//         { 'name': 'fred', 'age': 40 }
+//     ];
 
-    var pluck = function(arr, key) { 
-        return arr.map(function(item) { 
-            return item[key] 
-        }) 
+//     var pluck = function(arr, key) { 
+//         return arr.map(function(item) { 
+//             return item[key] 
+//         }) 
+//     }
+
+//    console.log(pluck(characters, 'name'))
+
+    // homework task 2
+
+    
+    // function isEven(x) { return x % 2 == 0; } 
+    
+    // var input = [1, 2, 3, 4, 5, 6];
+
+    // function filter(arr , predicate) {
+    //     return arr.filter(function(item){
+    //             return isEven(item)
+    //     })
+    // }
+
+    
+
+    // console.log(filter(input, isEven));
+
+    // homework task3
+    
+    
+    var obj = {
+        name: "Vasya",
+        age: "18"
     }
 
-   console.log(pluck(characters, 'name'))
+    Object.prototype.count = function(){
+        counter = 0;
+      for(var key in this) {
+          counter+=1
+        }
+        return counter
+    }
+
+    console.log(obj.count())
+
 }

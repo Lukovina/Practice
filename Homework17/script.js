@@ -65,10 +65,15 @@ window.onload = function() {
         age: "18"
     }
 
+
+
+
     Object.prototype.count = function(){
         counter = 0;
       for(var key in this) {
-          counter+=1
+          if(this.hasOwnProperty(key)){
+            counter+=1;
+          }
         }
         return counter
     }

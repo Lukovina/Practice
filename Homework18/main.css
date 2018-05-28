@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+.products {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+
+.product1,
+.product2,
+.product3,
+.product4,
+.product5 {
+    width: 10%; 
+    margin: 5px;
+    border: 1px solid grey; 
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center
+}
+
+.product_image {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center
+}
+
+.product1 .product_image {
+    background-image: url("images/bike.png");
+}
+.product2 .product_image {
+    background-image: url("images/rolls.png");
+  
+}
+.product3 .product_image {
+    background-image: url("images/skate.png");
+}
+.product4 .product_image {
+    background-image: url("images/sneakers.png");
+}
+.product5 .product_image {
+    background-image: url("images/samokat.png");
+
+}
+
+.Add_btn, .Remove_item {
+    align-items: center;
+    width:100%;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: .2s; 
+}
+
+.storage {
+    position: absolute;
+    width: 190px;
+    min-height: 150px;
+    top: 0px;
+    right: 0px;
+    margin: 20px;   
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.storage__inner{
+    color:grey
+}
+
+.remove {
+    position: absolute;
+    bottom: 0;
+        
+}
+
+

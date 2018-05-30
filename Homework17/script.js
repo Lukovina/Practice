@@ -69,7 +69,7 @@ window.onload = function() {
 
 
     Object.prototype.count = function(){
-        counter = 0;
+      var  counter = 0;
       for(var key in this) {
           if(this.hasOwnProperty(key)){
             counter+=1;

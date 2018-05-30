@@ -1,0 +1,7 @@
+{
+    "1":{"name":"Bелосипед","price":500,"quantity":0},
+    "2":{"name":"Ролики","price":200,"quantity":0},
+    "3":{"name":"Скейт","price":150,"quantity":0},
+    "4":{"name":"Кроссовки","price":100,"quantity":0},
+    "5":{"name":"Самокат","price":280,"quantity":0}
+}

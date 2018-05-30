@@ -53,6 +53,7 @@ window.onload = function () {
         if(!storageGoods[this.parentElement.id]) {
             storageGoods[this.parentElement.id] = goods[this.parentElement.id];
         }
+        console.log(JSON.stringify(goods))
         storageGoods[this.parentElement.id].quantity +=1;
         storageGoods = JSON.stringify(storageGoods);
         localStorage.setItem("goods", storageGoods);
@@ -84,5 +85,5 @@ window.onload = function () {
             storage.innerHTML += "<td>" + ls[key].name + "</td>" +  "<td>" + "&nbsp x &nbsp" + ls[key].quantity + "</td>"
         }
         storage.innerHTML += "</tr>";
-    }         
+    }
 }

@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+.menu{
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    background-color: lightblue;
+     list-style: none; 
+     cursor: pointer; 
+}
+
+.menuInner {
+    border: 1px solid black;
+    padding: 5px; 
+
+}
+
+.subMenuInner {
+    border: 1px solid black;
+    padding: 5px;  
+    background-color: rgb(129, 129, 247);
+    transition: .4s; 
+    display: block;
+    width: 100 px;
+
+}
+
+.subMenu{
+    position: absolute;
+    list-style: none;
+    display: flex; 
+}
+
+.subMenu__hidden {
+    visibility: hidden;
+}

@@ -1,0 +1,38 @@
+{
+    "menu": [
+        {
+            "title": "Home"
+        },
+        {
+            "title": "Settings"
+        },
+        {
+            "title": "Goods",
+            "submenu": [
+                {
+                    "title": "TV"  
+                },
+                {
+                    "title": "for auto"  
+                }
+            ]
+        },
+        {
+            "title": "Accounts"
+        },
+        {
+            "title": "Members",
+            "submenu": [
+                {
+                    "title": "TV"  
+                },
+                {
+                    "title": "for auto"  
+                },
+                {
+                    "title": "for velo"  
+                }
+            ]
+        }
+    ]
+}

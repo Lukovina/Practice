@@ -1,0 +1,24 @@
+{
+    "menu": [
+        {
+            "title": "Home"
+        },
+        {
+            "title": "Settings",
+            "submenu": [
+                {
+                    "title": "audio"  
+                },
+                {
+                    "title": "video"  
+                },
+                {
+                    "title": "language"  
+                }
+                ]
+        },
+                {
+            "title": "Accounts"
+        }
+    ] 
+}

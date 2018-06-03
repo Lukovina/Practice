@@ -53,20 +53,15 @@ window.onload = function () {
         if(!storageGoods[this.parentElement.id]) {
             storageGoods[this.parentElement.id] = goods[this.parentElement.id];
         }
-        console.log(JSON.stringify(goods))
         storageGoods[this.parentElement.id].quantity +=1;
-        storageGoods = JSON.stringify(storageGoods);
-        localStorage.setItem("goods", storageGoods);
-        storageGoods = JSON.parse(localStorage.goods);
+        localStorage.setItem("goods", JSON.stringify(storageGoods));
         renderStorage()
     }
 
     function removeFromCard() {
-        storageGoods = JSON.parse(localStorage.goods);
+        storageGoods[this.parentElement.id].quantity = 0;
         delete storageGoods[this.parentElement.id];
-        storageGoods = JSON.stringify(storageGoods);
-        localStorage.setItem("goods", storageGoods);
-        storageGoods = JSON.parse(localStorage.goods);
+        localStorage.setItem("goods", JSON.stringify(storageGoods));
         renderStorage()
     }
 

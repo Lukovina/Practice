@@ -10,10 +10,7 @@
             "title": "Goods",
             "submenu": [
                 {
-                    "title": "TV"  
-                },
-                {
-                    "title": "for auto"  
+                    "title": "auto"  
                 }
             ]
         },
@@ -24,10 +21,7 @@
             "title": "Members",
             "submenu": [
                 {
-                    "title": "TV"  
-                },
-                {
-                    "title": "for auto"  
+                    "title": "for moto"  
                 },
                 {
                     "title": "for velo"  

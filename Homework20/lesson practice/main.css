@@ -1,12 +1,13 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 .menu{
     top: 20px;
     left: 20px;
+    width: 70px;
     position: absolute;
     background-color: lightblue;
      list-style: none; 
@@ -14,25 +15,26 @@
 }
 
 .menuInner {
+    position: relative;
     border: 1px solid black;
-    padding: 5px; 
+    padding: 5px;
 
 }
 
 .subMenuInner {
-    border: 1px solid black;
-    padding: 5px;  
+    border: 1px solid black; 
+    padding: 5px;
     background-color: rgb(129, 129, 247);
-    transition: .4s; 
-    display: block;
-    width: 100 px;
+    transition: .4s;
+    width: 70px;
+
 
 }
 
 .subMenu{
     position: absolute;
+    display: none;
     list-style: none;
-    display: flex; 
 }
 
 .subMenu__hidden {

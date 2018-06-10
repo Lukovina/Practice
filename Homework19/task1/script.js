@@ -2,28 +2,42 @@ window.onload = function () {
 
 
     var form = document.forms.form,
-        name = document.forms.form.Name,
-        email = document.forms.form.Email,
         button = document.forms.form.checkAndSend,
-        result = document.getElementById("result")
-        button.addEventListener("click" , formCheck)
+        userMessage = document.getElementById("userMessage")
+        
+        button.addEventListener("click" , function() {
+            formValidate(form, userMessage)
+        })
+ 
+        
 
-    function formCheck() {
+    function formValidate(form, holder) {
+        var name = document.forms.form.Name,
+            age = document.forms.form.Age
+
         if(name.value == "") {
-           name.style.border = "2px solid red"
-           result.innerHTML = 'Заполните поле "Имя"'
-        }else if(email.value == "") {
-           email.style.border = "2px solid red"
-           result.innerHTML = 'Заполните поле "Email"'
+            showError(name, holder, 'Заполните поле "Имя"')
+        }else if(name.value.match(/\d/g) !== null) {
+            showError(name, holder, 'Поле "Имя" не может содержать цифры')
+        }else if(age.value == "") {
+            showError(age, holder, 'Заполните поле "Возраст"')
+        }else if(isNaN(age.value)) {
+            showError(age, holder, 'Неверно заполнено поле "Возраст"')
         }else {
-            var params = "name " + name.value & "email" + email.value
-            result.innerHTML = "Ваши данные успешно отправлены"
+            var params = {
+                "name ": form.Name.value,
+                "email": form.Age.value
+            } 
+            holder.innerHTML = "Ваши данные успешно отправлены"
             postAjax(JSON.stringify(params))
         }
     }  
+
+    function showError(area, holder, message ) {
+            area.classList.add('form_error')
+            holder.innerHTML = message;
+    }
 }
-
-
 
 function postAjax (params) {
     var xhr = new XMLHttpRequest;

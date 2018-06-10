@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    
-    <form name = "form">
-    <input type="text" name="Name" placeholder="Введите имя">
-    <input type="email" name="Email" placeholder="Введите имейл" >
-    <button type="button" name = "checkAndSend">Отправить</button>
+
+    <form name = "form" class="form">
+        Имя<br> 
+        <input type="text" name="Name" placeholder="Введите имя"> <br> 
+        Возраст<br> 
+        <input type="email" name="Age" placeholder="Введите возраст" >
+        <button type="button" name = "checkAndSend">Отправить</button><br>
     </form>
 
-    <div id ="result"></div>
+    <div id ="userMessage"></div>
 </body>
 </html>

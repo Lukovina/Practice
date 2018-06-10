@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <form action="/registration" method="post">
-    <input type="text" id="userName" placeholder="Введите имя">
-    <input type="email" id="userEmail" placeholder="Введите имейл" >
-    <button type="submit" onclick="validate(this.form)" >Отправить</button>
+    
+    <form name = "form">
+    <input type="text" name="Name" placeholder="Введите имя">
+    <input type="email" name="Email" placeholder="Введите имейл" >
+    <button type="button" name = "checkAndSend">Отправить</button>
     </form>
+
+    <div id ="result"></div>
 </body>
 </html>

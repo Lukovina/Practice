@@ -9,11 +9,14 @@ window.onload = function () {
             formValidate(form, userMessage)
         })
  
-        
-
     function formValidate(form, holder) {
         var name = document.forms.form.Name,
             age = document.forms.form.Age
+
+            name.classList.remove("form_error")
+            age.classList.remove("form_error")
+            
+
 
         if(name.value == "") {
             showError(name, holder, 'Заполните поле "Имя"')
@@ -21,13 +24,16 @@ window.onload = function () {
             showError(name, holder, 'Поле "Имя" не может содержать цифры')
         }else if(age.value == "") {
             showError(age, holder, 'Заполните поле "Возраст"')
-        }else if(isNaN(age.value)) {
+        }else if(isNaN(age.value) || age.value < 0 || age.value > 130 ) {
             showError(age, holder, 'Неверно заполнено поле "Возраст"')
         }else {
             var params = {
-                "name ": form.Name.value,
+                "name": form.Name.value,
                 "email": form.Age.value
-            } 
+            }
+
+            name.classList.remove("form_error");
+            age.classList.remove("form_error");
             holder.innerHTML = "Ваши данные успешно отправлены"
             postAjax(JSON.stringify(params))
         }

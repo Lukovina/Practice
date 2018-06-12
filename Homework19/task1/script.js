@@ -32,10 +32,10 @@ window.onload = function () {
                 "email": form.Age.value
             }
 
-            name.classList.remove("form_error");
-            age.classList.remove("form_error");
+            name.classList.add("form_error");
+            age.classList.add("form_error");
             holder.innerHTML = "Ваши данные успешно отправлены"
-            postAjax(JSON.stringify(params))
+            doAjax("POST" , params)
         }
     }  
 
@@ -45,9 +45,9 @@ window.onload = function () {
     }
 }
 
-function postAjax (params) {
+function postAjax (method ,params) {
     var xhr = new XMLHttpRequest;
 
-    xhr.open("POST" , "/registration")
-    xhr.send(params)
+    xhr.open(method , "/registration")
+    xhr.send(JSON.stringify(params))
 }

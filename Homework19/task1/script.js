@@ -19,14 +19,17 @@ window.onload = function () {
 
 
         if(name.value == "") {
-            showError(name, holder, 'Заполните поле "Имя"')
-        }else if(name.value.match(/\d/g) !== null) {
-            showError(name, holder, 'Поле "Имя" не может содержать цифры')
-        }else if(age.value == "") {
-            showError(age, holder, 'Заполните поле "Возраст"')
-        }else if(isNaN(age.value) || age.value < 0 || age.value > 130 ) {
-            showError(age, holder, 'Неверно заполнено поле "Возраст"')
-        }else {
+            return showError(name, holder, 'Заполните поле "Имя"')
+        }
+        if(age.value == "") {
+            return showError(age, holder, 'Заполните поле "Возраст"')
+        }
+        if(name.value.match(/\d/g) !== null) {
+            return showError(name, holder, 'Поле "Имя" не может содержать цифры')
+        }
+        if(isNaN(age.value) || age.value < 0 || age.value > 130 ) {
+            return showError(age, holder, 'Неверно заполнено поле "Возраст"')
+        }
             var params = {
                 "name": form.Name.value,
                 "email": form.Age.value
@@ -35,8 +38,8 @@ window.onload = function () {
             name.classList.add("form_error");
             age.classList.add("form_error");
             holder.innerHTML = "Ваши данные успешно отправлены"
-            doAjax("POST" , params)
-        }
+            doAjax("POST", "/registration", params)
+    
     }  
 
     function showError(area, holder, message ) {
@@ -45,9 +48,24 @@ window.onload = function () {
     }
 }
 
-function postAjax (method ,params) {
-    var xhr = new XMLHttpRequest;
 
-    xhr.open(method , "/registration")
-    xhr.send(JSON.stringify(params))
+function doAjax(method, url, params){
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    
+    return new Promise(function(resolve, reject){
+        xhr.send(JSON.stringify(params));
+
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState != 4) {
+                return;
+            }
+
+            if (xhr.status != 200) {
+                reject(xhr);
+            }
+
+            resolve(JSON.parse(xhr.responseText));
+        }
+    });
 }

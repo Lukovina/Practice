@@ -61,5 +61,5 @@ window.onload = function () {
    
 
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'goods.json',true);
+    xhr.open('GET', 'goods.json');
     xhr.send();

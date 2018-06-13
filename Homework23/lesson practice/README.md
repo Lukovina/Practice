@@ -1,4 +1,4 @@
-#Getters , setters practice
+# Getters , setters practice
 1. У объекта data создать свойство геттер, сеттер model. Которое обрабатывает данные после двух обращений.
 При первом обращнении сохраняется строка. Например: data.model = 'Hello, how, are you?'
 

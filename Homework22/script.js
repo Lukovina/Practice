@@ -23,7 +23,6 @@ class Elem {
     }
  }
 
-
  var elem = new Elem('.block');
  elem.html("INNER").append("before-").prepend("-after")
  elem.attr("name", "www").attr('title', 'hello')

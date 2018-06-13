@@ -28,11 +28,11 @@ set model (obj) {
 
     var actions = {
         "*" : (a,b) => a * b,
-        "+" : (a,b) => a + b
+        "+" : (a = 0,b = 0) => a + b
     }
    
     for(var key in obj) {
-        this[key] =  actions[obj[key].operation](this.key, obj[key].value)
+        this[key] =  actions[obj[key].operation](this[key], obj[key].value)
         } 
     }
 }
@@ -41,7 +41,7 @@ const obj2 = {
     x: {value: 33,
     operation: "*"
     },
-    y: {value: 75,
+    z: {value: 75,
     operation: '+'},
 
 }

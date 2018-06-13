@@ -1,39 +1,31 @@
 window.onload = function () {
-// Реализуйте класс Elem, который параметром принимает селектор одного HTML элемента и затем может выполнять с ним различные операции. Класс должен работать следующим образом:
-
-
-
-//  elem.html('!'); //запишет в текст элемента '!'
-//  elem.append('!'); //запишет в начало элемента '!'
-//  elem.prepend('!'); //запишет в конец элемента '!'
-//  elem.attr('class', 'www'); //запишет в атрибут class значение www
-
- //Должны работать цепочки методов:
-//  elem.html('hello').append('!').prepend('!');
-//  elem.attr('class', 'www').attr('title', 'hello');
-
- class Elem {
+class Elem {
      constructor (elem) {
-        this.elem = document.querySelector('.btn')
+        this.elem = document.querySelector('.block')  
      }
-
     html(inner) {
-
-         this.elem.innerHTML = inner
-         return this
+        this.elem.textContent += inner;
+        return this
      }
-    append(inner) {
-        this.elem.innerHTML += inner
-        return this.elem
+    append(inner) { 
+        let textElement = document.createTextNode(inner);        
+        this.elem.insertBefore(textElement, this.elem.firstChild);
+        return this
     }
-    prepend(inner) {
-        this.elem.innerHTML = inner + this.elem.innerHTML
-        return this.elem
+    prepend(inner) {       
+        let textElement = document.createTextNode(inner);
+        this.elem.appendChild(textElement);
+        return this
+    }
+    attr(atr, title) {
+        this.elem.setAttribute(atr,title);
+        return this
     }
  }
 
 
- var elem = new Elem('.btn');
-
- elem.html("Hell").append('kuku').prepend('koko')
+ var elem = new Elem('.block');
+ elem.html("INNER").append("before-").prepend("-after")
+ elem.attr("name", "www").attr('title', 'hello')
+ console.dir(elem)
 }

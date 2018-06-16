@@ -1,4 +1,3 @@
-// ----------Lesson practice
 // ----------task1
 // let data = {
 
@@ -49,32 +48,3 @@
 // }
 
 // object.model = obj2
-
-//---------Homework
-
-//---------task1
-
-const obj = {
-    list_1: [10, 20, 30, 40, 50, 60],
-    list_2: [15, 30, 45, 60, 75, 90, 105],
-    get collise () {
-        return collision(this) 
-    } 
-}
-
-function collision(object) {
-    return object.list_1.filter(function(item) {
-        for(var key of object.list_2) {
-            if(item == key) {
-                return item
-            }
-        } 
-    })
-}
-
-//--------task2
-
-// Array.prototype.get = function () {
-
-// }
-

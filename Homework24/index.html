@@ -1,0 +1,29 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Modules</title>
+</head>
+<body>
+ 
+    <button class="titleSort">sort by title</button>
+    <button class="priceSort">sort by price</button>
+    <section class = "goods"></section>
+    
+
+    <!-- add script tags here -->
+
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    
+    <script>
+        System.config({
+            meta: {
+                format: 'cjs'
+            }
+        });
+        System.import('js/app.js');
+    </script>
+    
+</body>
+</html>

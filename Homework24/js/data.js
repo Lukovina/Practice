@@ -25,10 +25,23 @@ function doAjax(method, url){
 }
 
 
-function sortByTitle(arr){
-    arr.sort()
-}
+function sortByPrice(itemA, itemB) {
+    return itemA.price - itemB.price;
+  }
+
+function sortByTitle(itemA, itemB) {
+  if (itemA.title > itemB.title) {
+    return 1;
+  }
+  if (itemA.title < itemB.title) {
+    return -1;
+  }
+  return 0;
+};
+
 
 module.exports = {
-    load
+    load,
+    sortByPrice,
+    sortByTitle
 };

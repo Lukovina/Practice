@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Декоратор (Decorator)</title>
+</head>
+<body>
+    <script>
+
+        function Calc(a = 0, b = 0) {
+            this.a = a;
+            this.b = b;
+        }
+        Calc.prototype.sum = function () {
+            return this.a + this.b;
+        }
+        Calc.prototype.min = function () {
+            return this.a - this.b;
+        }
+        Calc.prototype.mul = function () {
+            return this.a * this.b;
+        }
+        Calc.prototype.div = function () {
+            return this.a / this.b;
+        }
+
+
+        // Метод для добавления декораторов
+        Calc.prototype.addDecor = function (decorator) {
+            var F = function () { },
+                overrides = this.constructor.decorators[decorator],
+                i,
+                newObj;
+            // Прототипом для декоратора устанавливается тот объект, который декорируется.
+            F.prototype = this;
+            newObj = new F();
+            // сохраняем ссылку на тот объект, который декорируем
+            newObj.super = F.prototype;
+            // Все свойства и методы декоратора копируем в декорируемый объект
+            for (i in overrides) {
+                if (overrides.hasOwnProperty(i)) {
+                    newObj[i] = overrides[i];
+                }
+            }
+            
+            console.log(newObj);
+            
+            return newObj;
+        }
+        // Все декораторы будут храниться в свойстве конструктора.
+        Calc.decorators = {};
+        // добавление декораторов
+        Calc.decorators.enjineCalc = {
+            power: function(a,b){
+               return (this.a+this.b)-1
+           }
+        }
+    
+        var calc = new Calc(3,2);
+        console.log("Result - " + calc.sum());
+        calc = calc.addDecor("enjineCalc")
+        console.log("Result - " + calc.power());
+        
+    </script>
+</body>
+</html>

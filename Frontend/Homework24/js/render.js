@@ -1,7 +1,9 @@
 function renderGoods (item) {
     var goods = document.querySelector(".goods")
         goods.innerHTML = "";
-    item.list.forEach(element => {
+
+
+    item.forEach(element => {
     var div = document.createElement("div"),  
         img = document.createElement("img"),
         h2 = document.createElement("h2"),
@@ -14,7 +16,7 @@ function renderGoods (item) {
 
         goods.appendChild(div)
         var card = document.querySelectorAll(".card")   
-        img.setAttribute("src", element.img)
+        img.src = element.img
         h2.innerHTML = element.title;
         p.innerHTML = element.price;
         

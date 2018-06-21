@@ -1,4 +1,19 @@
+var model = {
+    origin: []
+}
+
+function initialCondition(value) {
+    if(arguments.length){
+        model.origin = value
+        return value
+        }else{
+            return model.origin
+        }
+}
+
+
 function load() {
+
     return doAjax("GET", "./goods.json")
 } 
 
@@ -19,7 +34,10 @@ function doAjax(method, url){
                 reject(xhr);
             }
 
-            resolve(JSON.parse(xhr.responseText));
+            var response = JSON.parse(xhr.responseText)
+
+            initialCondition(response.list);
+            resolve(response);
         }
     });
 }
@@ -39,9 +57,16 @@ function sortByTitle(itemA, itemB) {
   return 0;
 };
 
+function findById (array, value) {
+   return array.filter( item => item.id == value)
+}
+
 
 module.exports = {
     load,
     sortByPrice,
-    sortByTitle
+    sortByTitle,
+    findById,
+    initialCondition
+    
 };

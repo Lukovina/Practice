@@ -13,13 +13,13 @@ data.load()
 priceBtn.addEventListener("click", function(){
     data
         .load()
-        .then(value=>render.renderGoods(value.list.sort(data.sortByPrice)))
+        .then(value=>render.renderGoods(data.sortByPrice(value.list)))
 })  
 
 titleBtn.addEventListener("click", function(){
     data
         .load()
-        .then(value=>render.renderGoods(value.list.sort(data.sortByTitle)))
+        .then(value=>render.renderGoods(data.sortByTitle(value.list)))
 })   
 
 searchBtn.addEventListener("click", function(){

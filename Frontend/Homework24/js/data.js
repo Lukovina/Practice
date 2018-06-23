@@ -44,18 +44,22 @@ function doAjax(method, url){
 }
 
 
-function sortByPrice(itemA, itemB) {
-    return itemA.price - itemB.price;
+function sortByPrice(array) {
+    return array.sort((itemA, itemB)=>
+            itemA.price - itemB.price)
   }
 
-function sortByTitle(itemA, itemB) {
-  if (itemA.title > itemB.title) {
-    return 1;
-  }
-  if (itemA.title < itemB.title) {
-    return -1;
-  }
-  return 0;
+function sortByTitle(array) {
+    return array.sort((itemA, itemB)=>{
+        if (itemA.title > itemB.title) {
+            return 1;
+          }
+          if (itemA.title < itemB.title) {
+            return -1;
+          }
+          return 0;
+    })
+ 
 };
 
 function search (array, value) {
@@ -65,8 +69,8 @@ function search (array, value) {
            if(key != "img"){
             if(item[key].toString().indexOf(value) != -1 ) {
                 return item
-                }
-            }
+             }
+           }
        }
    })
 }

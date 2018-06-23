@@ -3,32 +3,32 @@
       {
         "img": "images/skate.png",
         "title": "skate",
-        "price": "500",
+        "price": 200,
         "id": 1
     },{
         "img": "images/bike.png",
         "title": "bike",
-        "price": "200",
+        "price": 200,
         "id": 2
     },{
         "img": "images/rolls.png",
         "title": "rolls",
-        "price": "700",
+        "price": 700,
         "id": 3
     },{
         "img": "images/skate.png",
         "title": "skate",
-        "price": "500",
+        "price": 500,
         "id": 1
     },{
         "img": "images/bike.png",
         "title": "bike",
-        "price": "200",
+        "price": 200,
         "id": 8
     },{
         "img": "images/rolls.png",
         "title": "rolls",
-        "price": "700",
+        "price": 300,
         "id": 99
     }
   ]    

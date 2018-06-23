@@ -1,20 +1,18 @@
-var model = {
-    origin: []
-}
+var model = {}
 
 function initialCondition(value) {
     if(arguments.length){
         model.origin = value
         return value
         }else{
-            return model.origin
+        return model.origin
         }
 }
 
 
 function load() {
 
-    return doAjax("GET", "./goods.json")
+    return doAjax("GET", "goods.json")
 } 
 
 
@@ -36,7 +34,10 @@ function doAjax(method, url){
 
             var response = JSON.parse(xhr.responseText)
 
-            initialCondition(response.list);
+            if(!model.origin){
+                initialCondition(response.list);
+            }
+            
             resolve(response);
         }
     });
@@ -57,8 +58,17 @@ function sortByTitle(itemA, itemB) {
   return 0;
 };
 
-function findById (array, value) {
-   return array.filter( item => item.id == value)
+function search (array, value) {
+
+   return array.filter(item => {
+       for(var key in item) {
+           if(key != "img"){
+            if(item[key].toString().indexOf(value) != -1 ) {
+                return item
+                }
+            }
+       }
+   })
 }
 
 
@@ -66,7 +76,6 @@ module.exports = {
     load,
     sortByPrice,
     sortByTitle,
-    findById,
+    search,
     initialCondition
-    
 };

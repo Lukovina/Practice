@@ -2,8 +2,8 @@ var render = require('./render.js'),
     data = require('./data.js'),
     priceBtn = document.querySelector(".priceSort"),
     titleBtn = document.querySelector(".titleSort"),
-    idBtn = document.querySelector(".idBtn"),
-    idCatcher = document.querySelector(".idCatcher"),
+    searchBtn = document.querySelector(".searchBtn"),
+    searchHolder = document.querySelector(".searchHolder"),
     resetBtn = document.querySelector(".reset")  
 
 
@@ -22,17 +22,17 @@ titleBtn.addEventListener("click", function(){
         .then(value=>render.renderGoods(value.list.sort(data.sortByTitle)))
 })   
 
-idBtn.addEventListener("click", function(){
+searchBtn.addEventListener("click", function(){
+
     data
         .load()
         .then(
-            value=> render.renderGoods(data.findById(value.list, idCatcher.value))
+            value=> render.renderGoods(data.search(value.list, searchHolder.value))
         )
 })
 
 resetBtn.addEventListener("click", function() {
-    data.load()
-               .then(value=>console.log(data.initialCondition(value))) 
+    render.renderGoods(data.initialCondition())
 })
 
 

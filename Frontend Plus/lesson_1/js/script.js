@@ -6,7 +6,7 @@
 
 // list.sort(sortByNumber)  
 
-// let sortedList = list.sort(sortByNumber).map( item => item.value ).filter(item=> item<=10 )
+// let sortedList = list.map( item => item.value ).filter(item=> item<=10 )
 
 // function sortByNumber(a,b){
 //     return a.value-b.value

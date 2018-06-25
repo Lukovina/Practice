@@ -25,7 +25,7 @@
 
 
         // Метод для добавления декораторов
-        Calc.prototype.addDecor = function (decorator) {
+        Calc.prototype.addDecorator = function (decorator) {
             var F = function () { },
                 overrides = this.constructor.decorators[decorator],
                 i,
@@ -50,15 +50,21 @@
         Calc.decorators = {};
         // добавление декораторов
         Calc.decorators.enjineCalc = {
-            power: function(a,b){
-               return (this.a+this.b)-1
-           }
+            sin: function(a){
+               return Math.sin(a)
+           },
+            cos: function(a) {
+                return Math.cos(a)
+            },
+            tan: function(a) {
+                return Math.tan(a)
+            }
         }
     
         var calc = new Calc(3,2);
-        console.log("Result - " + calc.sum());
-        calc = calc.addDecor("enjineCalc")
-        console.log("Result - " + calc.power());
+        // console.log("Result - " + calc.sum());
+        calc = calc.addDecorator("enjineCalc")
+        // console.log("Result - " + calc.sin(6));
         
     </script>
 </body>

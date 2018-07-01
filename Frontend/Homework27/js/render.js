@@ -1,9 +1,7 @@
-function render_forks() {
-    
+function render(obj) {
+    console.log(obj)
 }
 
-
-
 module.exports = {
- render_forks
+    render
 };

@@ -18,7 +18,7 @@ class ViewController  {
           repoImg.src = this.url.avatar_url
     }
 
-    fillTableContent() {
+    fillTable() {
     const table = document.querySelector(".repo-table");   
           table.innerHTML += 
             this.repos.map(repo=>
@@ -34,7 +34,7 @@ class ViewController  {
     async render() {
         await this.getRepos();
         await this.fillHeader();
-        await this.fillTableContent()
+        await this.fillTable()
     }
 }
 

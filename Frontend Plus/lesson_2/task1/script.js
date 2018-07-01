@@ -16,7 +16,8 @@ async function runAsyncAll(list, async) {
             res.push(await i())
         }
     return res
-    }    
+    }
+        
     return  Promise.all(list.map(item=>item()))
 }
 

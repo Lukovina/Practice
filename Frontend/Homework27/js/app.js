@@ -6,7 +6,6 @@ let tableItems = {
     forks: []
 }
 
-
 dataService.load("GET", "https://api.github.com/orgs/hillel-front-end/repos")
     .then(val=> {
         tableItems.repos = val;  
@@ -15,3 +14,7 @@ dataService.load("GET", "https://api.github.com/orgs/hillel-front-end/repos")
     .then(res=>Promise.all(res))
     .then(array=>array.forEach(arr=> {tableItems.forks.push(arr)}))
     .then(()=>render.render(tableItems))
+
+
+    
+

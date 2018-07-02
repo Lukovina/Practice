@@ -5,15 +5,30 @@ function render(obj) {
 
     for(let key in names) {
         tableHolder.innerHTML +=
-        `<li>
+        `<li class="repos-li">
         ${names[key]}
-            <ul>
+            <ul class="inner-ul">
                 ${forkOwners[key].map(name=>`<li>${name}</li>`).join("")}
             <ul>
         </li>`
 
     }
-   
+
+    let inul = document.querySelectorAll(".inner-ul"),
+        inil = document.querySelectorAll(".repos-li")
+
+    
+    inul.forEach(ul => {
+      ul.style.left = ul.parentElement.offsetWidth + "px"
+      ul.style.top = ul.parentElement.offsetTop + "px"
+        }
+    )
+
+    inil.forEach(li=> li.addEventListener("mouseover", visibleOwnInner))
+        
+        function visibleOwnInner() {
+            event.target.firstElementChild.classList.toggle("show")
+        }
 }
 
 

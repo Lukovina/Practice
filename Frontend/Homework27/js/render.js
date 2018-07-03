@@ -3,12 +3,14 @@ function render(obj) {
         forkOwners = obj.forks.map(fork => fork.map(arr=>arr.full_name)),
         tableHolder = document.querySelector(".repo-table")
 
+
+        tableHolder.innerHTML = "";
     for(let key in names) {
         tableHolder.innerHTML +=
         `<li class="repos-li">
-        ${names[key]}
+        ${names[key]} (${(forkOwners[key] && forkOwners[key].length) || 0})
             <ul class="inner-ul">
-                ${forkOwners[key].map(name=>`<li>${name}</li>`).join("")}
+
             <ul>
         </li>`
 
@@ -24,11 +26,6 @@ function render(obj) {
         }
     )
 
-    inil.forEach(li=> li.addEventListener("mouseover", visibleOwnInner))
-        
-        function visibleOwnInner() {
-            event.target.firstElementChild.classList.toggle("show")
-        }
 }
 
 

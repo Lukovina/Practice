@@ -8,18 +8,23 @@
 }
 
 .repo-table li {
-    padding: 5px;
+    padding: 10px;
     background-color: lightgrey;
     border-bottom: 1px solid grey;
     width: 200px;
+}
+
+.repo-table li:hover {
+    background-color: orange;
+    
+}
+
+.repo-table li:hover .inner-ul{
+    visibility: visible;
 }
 
 .inner-ul {
     position: absolute;
     visibility: hidden;
     width: 250px;
-}
-
-.show {
-    visibility: visible
 }

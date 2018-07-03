@@ -27,8 +27,9 @@ class ViewController  {
                 <td>${repo.default_branch}</td>
                 <td>${repo.updated_at}</td>
                 <td>${repo.language}</td>
-                </tr>`    
-            ).join('')
+                </tr>`
+            )
+            .join('')
     }
 
     async render() {
